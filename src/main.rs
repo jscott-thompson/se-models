@@ -54,7 +54,9 @@ pub fn update_3dof(current_state: StateVector, commanded_theta: f64, commanded_p
     new_state.z += new_state.z_dot*dt;
     new_state.t += dt;
     new_state.theta = commanded_theta;
+    new_state.theta_dot = (current_state.theta - new_state.theta)/dt;
     new_state.psi = commanded_psi;
+    new_state.psi_dot = (current_state.psi - new_state.psi)/dt;
 
     return new_state
 }
