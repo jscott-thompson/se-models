@@ -11,12 +11,32 @@ pub struct StateVector
     pub x_dot: f64,
     pub y_dot: f64,
     pub z_dot: f64,
-    pub phi: f64,
-    pub theta: f64,
-    pub psi: f64,
+    pub phi: f64,           // rotation about the Z axis by phi (heading/yaw)
+    pub theta: f64,         // rotation about x' axis (rotated X axis) by theta (pitch)
+    pub psi: f64,           // rotation about z' axis (rotate Z axis) by psi (roll)
     pub phi_dot: f64,
     pub theta_dot: f64,
     pub psi_dot: f64
+}
+
+impl StateVector {
+    pub fn new(t_0: f64, x_0: f64, y_0: f64, z_0: f64, x_dot_0: f64, y_dot_0: f64, z_dot_0: f64, phi_0: f64, theta_0: f64, psi_0: f64, phi_dot_0: f64, theta_dot_0: f64, psi_dot_0: f64) -> Self {
+        let mut new_state: StateVector = Default::default();
+        new_state.t = t_0;
+        new_state.x = x_0;
+        new_state.y = y_0;
+        new_state.z = z_0;
+        new_state.x_dot = x_dot_0;
+        new_state.y_dot = y_dot_0;
+        new_state.z_dot = z_dot_0;
+        new_state.phi = phi_0;
+        new_state.theta = theta_0;
+        new_state.psi = psi_0;
+        new_state.phi_dot = phi_dot_0;
+        new_state.theta_dot = theta_dot_0;
+        new_state.psi_dot = psi_dot_0;
+        return new_state
+    }
 }
 
 impl fmt::Display for StateVector 
@@ -63,7 +83,7 @@ pub fn update_3dof(current_state: StateVector, commanded_theta: f64, commanded_p
 
 pub fn update_2dof_turn_rate_constraint(current_state: StateVector, commanded_theta_dot: f64, dt: f64) -> StateVector {
 
-    let omega_max: f64 = 10.0;
+    let omega_max: f64 = 30.0*PI/180.0;
     let mut new_state = current_state;
     let speed = f64::sqrt(f64::powf(current_state.x_dot,2.0) + f64::powf(current_state.y_dot,2.0));
     new_state.x_dot = speed*f64::cos(current_state.theta);
@@ -83,6 +103,23 @@ pub fn update_2dof_turn_rate_constraint(current_state: StateVector, commanded_th
 }
 
 fn main() {
+    let t_0: f64 = 0.0;
+    let x_0:f64 = 0.0;
+    let y_0:f64 = 0.0;
+    let z_0:f64 = 0.0;
+    let x_dot_0:f64 = 1.0;
+    let y_dot_0:f64 = 1.0;
+    let z_dot_0:f64 = 1.0;
+    let speed = f64::sqrt(f64::powf(x_dot_0,2.0) + f64::powf(y_dot_0,2.0) + f64::powf(z_dot_0,2.0));
+    let phi_0 = f64::acos(x_dot_0/speed);
+    let theta_0 = f64::acos(y_dot_0/speed);
+    let psi_0 = f64::acos(z_dot_0/speed);
+    let phi_dot_0:f64 = 0.0;
+    let theta_dot_0: f64 = 0.0;
+    let psi_dot_0: f64 = 0.0;
+
+    let state_0 = StateVector::new(t_0, x_0, y_0, z_0, x_dot_0, y_dot_0, z_dot_0, phi_0, theta_0, psi_0, phi_dot_0, theta_dot_0, psi_dot_0);
+    println!("state_0: {}", state_0);
     let mut my_state: StateVector = Default::default();
     my_state.x_dot = 1.0;
     my_state.y_dot = 1.0;
@@ -98,6 +135,14 @@ fn main() {
     println!("initial: {}", my_state);
     let commanded_theta: f64 = 10.0*PI/180.0;
     my_state = update_2dof(my_state, commanded_theta, 0.1);
+    println!("update : {}", my_state);
+
+
+    println!("");
+    println!("update_2dof with commanded turn rate constraints");
+    println!("initial: {}", my_state);
+    let commanded_theta_dot: f64 = 45.0*PI/180.0; // This is 0.7853981633974483 rad, but greater than omega_max, which is 0.5235987755982988 rad
+    my_state = update_2dof_turn_rate_constraint(my_state, commanded_theta_dot, 0.1);
     println!("update : {}", my_state);
 
 }
