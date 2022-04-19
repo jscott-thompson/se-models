@@ -62,24 +62,6 @@ pub fn update_2dof(current_state: StateVector, commanded_theta: f64, dt: f64) ->
     return new_state
 }
 
-pub fn update_3dof(current_state: StateVector, commanded_theta: f64, commanded_psi: f64, dt: f64) -> StateVector {
-
-    let mut new_state = current_state;
-    let speed = f64::sqrt(f64::powf(current_state.x_dot,2.0) + f64::powf(current_state.y_dot,2.0) + f64::powf(current_state.z_dot,2.0));
-    new_state.x_dot = speed*f64::cos(current_state.theta)*f64::cos(current_state.psi);
-    new_state.y_dot = speed*f64::sin(current_state.theta)*f64::sin(current_state.psi);
-    new_state.z_dot = speed*f64::sin(current_state.theta);
-    new_state.x += new_state.x_dot*dt;
-    new_state.y += new_state.y_dot*dt;
-    new_state.z += new_state.z_dot*dt;
-    new_state.t += dt;
-    new_state.theta = commanded_theta;
-    new_state.theta_dot = (current_state.theta - new_state.theta)/dt;
-    new_state.psi = commanded_psi;
-    new_state.psi_dot = (current_state.psi - new_state.psi)/dt;
-
-    return new_state
-}
 
 pub fn update_2dof_turn_rate_constraint(current_state: StateVector, commanded_theta_dot: f64, dt: f64) -> StateVector {
 
@@ -98,6 +80,25 @@ pub fn update_2dof_turn_rate_constraint(current_state: StateVector, commanded_th
     }
     new_state.theta += new_state.theta_dot*dt;
     new_state.t += dt; 
+
+    return new_state
+}
+
+pub fn update_3dof(current_state: StateVector, commanded_theta: f64, commanded_psi: f64, dt: f64) -> StateVector {
+
+    let mut new_state = current_state;
+    let speed = f64::sqrt(f64::powf(current_state.x_dot,2.0) + f64::powf(current_state.y_dot,2.0) + f64::powf(current_state.z_dot,2.0));
+    new_state.x_dot = speed*f64::cos(current_state.theta)*f64::cos(current_state.psi);
+    new_state.y_dot = speed*f64::sin(current_state.theta)*f64::sin(current_state.psi);
+    new_state.z_dot = speed*f64::sin(current_state.theta);
+    new_state.x += new_state.x_dot*dt;
+    new_state.y += new_state.y_dot*dt;
+    new_state.z += new_state.z_dot*dt;
+    new_state.t += dt;
+    new_state.theta = commanded_theta;
+    new_state.theta_dot = (current_state.theta - new_state.theta)/dt;
+    new_state.psi = commanded_psi;
+    new_state.psi_dot = (current_state.psi - new_state.psi)/dt;
 
     return new_state
 }
