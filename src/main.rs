@@ -111,7 +111,7 @@ fn main() {
     let y_dot_0:f64 = 1.0;
     let z_dot_0:f64 = 1.0;
     let speed = f64::sqrt(f64::powf(x_dot_0,2.0) + f64::powf(y_dot_0,2.0) + f64::powf(z_dot_0,2.0));
-    let phi_0 = f64::acos(x_dot_0/speed);
+    let phi_0 = f64::acos(x_dot_0/speed);       // Use direction cosines to set initial orientation aligned with the velocity vector
     let theta_0 = f64::acos(y_dot_0/speed);
     let psi_0 = f64::acos(z_dot_0/speed);
     let phi_dot_0:f64 = 0.0;
@@ -139,7 +139,7 @@ fn main() {
 
 
     println!("");
-    println!("update_2dof with commanded turn rate constraints");
+    println!("update_2dof_turn_rate_constraint with commanded turn rate constraints");
     println!("initial: {}", my_state);
     let commanded_theta_dot: f64 = 45.0*PI/180.0; // This is 0.7853981633974483 rad, but greater than omega_max, which is 0.5235987755982988 rad
     my_state = update_2dof_turn_rate_constraint(my_state, commanded_theta_dot, 0.1);
