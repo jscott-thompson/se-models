@@ -95,7 +95,7 @@ pub fn update_3dof(current_state: StateVector, commanded_theta: f64, commanded_p
     new_state.y += new_state.y_dot*dt;
     new_state.z += new_state.z_dot*dt;
     new_state.t += dt;
-    new_state.theta = commanded_theta;
+    new_state.theta = commanded_theta;      // Instantaneous change. No limits imposed on heading change. Same for roll.
     new_state.theta_dot = (current_state.theta - new_state.theta)/dt;
     new_state.psi = commanded_psi;
     new_state.psi_dot = (current_state.psi - new_state.psi)/dt;
@@ -122,28 +122,28 @@ fn main() {
     let state_0 = StateVector::new(t_0, x_0, y_0, z_0, x_dot_0, y_dot_0, z_dot_0, phi_0, theta_0, psi_0, phi_dot_0, theta_dot_0, psi_dot_0);
     println!("state_0: {}", state_0);
     let mut my_state: StateVector = Default::default();
-    my_state.x_dot = 1.0;
-    my_state.y_dot = 1.0;
-    my_state.theta = f64::atan2(my_state.x_dot, my_state.y_dot);
 
+    println!("");
     println!("update_2dof with no commanded turn");
-    println!("initial: {}", my_state);
-    my_state = update_2dof(my_state, my_state.theta, 0.1);
+    my_state = update_2dof(state_0, my_state.theta, 0.1);
     println!("update : {}", my_state);
 
     println!("");
     println!("update_2dof with commanded turn");
-    println!("initial: {}", my_state);
     let commanded_theta: f64 = 10.0*PI/180.0;
-    my_state = update_2dof(my_state, commanded_theta, 0.1);
+    my_state = update_2dof(state_0, commanded_theta, 0.1);
     println!("update : {}", my_state);
 
 
     println!("");
     println!("update_2dof_turn_rate_constraint with commanded turn rate constraints");
-    println!("initial: {}", my_state);
     let commanded_theta_dot: f64 = 45.0*PI/180.0; // This is 0.7853981633974483 rad, but greater than omega_max, which is 0.5235987755982988 rad
-    my_state = update_2dof_turn_rate_constraint(my_state, commanded_theta_dot, 0.1);
+    my_state = update_2dof_turn_rate_constraint(state_0, commanded_theta_dot, 0.1);
     println!("update : {}", my_state);
 
+    println!("");
+    println!("update_3dof with commanded turn and roll");
+    let commanded_psi: f64 = 10.0*PI/180.0;
+    my_state = update_3dof(state_0, commanded_theta, commanded_psi, 0.1);
+    println!("update : {}", my_state);
 }
