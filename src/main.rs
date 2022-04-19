@@ -134,7 +134,6 @@ fn main() {
     my_state = update_2dof(state_0, commanded_theta, 0.1);
     println!("update : {}", my_state);
 
-
     println!("");
     println!("update_2dof_turn_rate_constraint with commanded turn rate constraints");
     let commanded_theta_dot: f64 = 45.0*PI/180.0; // This is 0.7853981633974483 rad, but greater than omega_max, which is 0.5235987755982988 rad
