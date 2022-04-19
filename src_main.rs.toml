@@ -1,0 +1,490 @@
+name = 'src/main.rs'
+start_line = 1
+end_line = 148
+kind = 'unit'
+
+[[spaces]]
+name = 'StateVector'
+start_line = 22
+end_line = 40
+kind = 'impl'
+
+[[spaces.spaces]]
+name = 'new'
+start_line = 23
+end_line = 39
+kind = 'function'
+spaces = []
+[spaces.spaces.metrics.nargs]
+sum = 13.0
+average = 13.0
+
+[spaces.spaces.metrics.nexits]
+sum = 2.0
+average = 2.0
+
+[spaces.spaces.metrics.cognitive]
+sum = 0.0
+average = 0.0
+
+[spaces.spaces.metrics.cyclomatic]
+sum = 1.0
+average = 1.0
+
+[spaces.spaces.metrics.halstead]
+n1 = 12.0
+N1 = 74.0
+n2 = 17.0
+N2 = 44.0
+length = 118.0
+estimated_program_length = 112.50641830990963
+purity_ratio = 0.9534442229653359
+vocabulary = 29.0
+volume = 573.2417574250535
+difficulty = 15.529411764705882
+level = 0.06439393939393939
+effort = 8902.107291777302
+time = 494.5615162098501
+bugs = 0.1431772317938404
+
+[spaces.spaces.metrics.loc]
+sloc = 17.0
+ploc = 17.0
+lloc = 15.0
+cloc = 0.0
+blank = 0.0
+
+[spaces.spaces.metrics.nom]
+functions = 1.0
+closures = 0.0
+total = 1.0
+
+[spaces.spaces.metrics.mi]
+mi_original = 91.84514460289466
+mi_sei = 56.9055025157176
+mi_visual_studio = 53.710610878885774
+[spaces.metrics.nargs]
+sum = 13.0
+average = 13.0
+
+[spaces.metrics.nexits]
+sum = 2.0
+average = 2.0
+
+[spaces.metrics.cognitive]
+sum = 0.0
+average = 0.0
+
+[spaces.metrics.cyclomatic]
+sum = 2.0
+average = 1.0
+
+[spaces.metrics.halstead]
+n1 = 12.0
+N1 = 75.0
+n2 = 17.0
+N2 = 44.0
+length = 119.0
+estimated_program_length = 112.50641830990963
+purity_ratio = 0.9454320866378961
+vocabulary = 29.0
+volume = 578.0997384201811
+difficulty = 15.529411764705882
+level = 0.06439393939393939
+effort = 8977.548878995753
+time = 498.752715499764
+bugs = 0.14398500446054902
+
+[spaces.metrics.loc]
+sloc = 19.0
+ploc = 19.0
+lloc = 15.0
+cloc = 0.0
+blank = 0.0
+
+[spaces.metrics.nom]
+functions = 1.0
+closures = 0.0
+total = 1.0
+
+[spaces.metrics.mi]
+mi_original = 89.76940719715053
+mi_sei = 54.01266631366728
+mi_visual_studio = 52.49672935505878
+
+[[spaces]]
+name = 'StateVector'
+start_line = 42
+end_line = 48
+kind = 'impl'
+
+[[spaces.spaces]]
+name = 'fmt'
+start_line = 44
+end_line = 47
+kind = 'function'
+spaces = []
+[spaces.spaces.metrics.nargs]
+sum = 2.0
+average = 2.0
+
+[spaces.spaces.metrics.nexits]
+sum = 1.0
+average = 1.0
+
+[spaces.spaces.metrics.cognitive]
+sum = 0.0
+average = 0.0
+
+[spaces.spaces.metrics.cyclomatic]
+sum = 1.0
+average = 1.0
+
+[spaces.spaces.metrics.halstead]
+n1 = 8.0
+N1 = 10.0
+n2 = 18.0
+N2 = 34.0
+length = 44.0
+estimated_program_length = 99.05865002596161
+purity_ratio = 2.2513329551354913
+vocabulary = 26.0
+volume = 206.81934759820803
+difficulty = 7.555555555555555
+level = 0.1323529411764706
+effort = 1562.635070742016
+time = 86.81305948566757
+bugs = 0.044886642681439846
+
+[spaces.spaces.metrics.loc]
+sloc = 4.0
+ploc = 4.0
+lloc = 1.0
+cloc = 0.0
+blank = 0.0
+
+[spaces.spaces.metrics.nom]
+functions = 1.0
+closures = 0.0
+total = 1.0
+
+[spaces.spaces.metrics.mi]
+mi_original = 120.586433734249
+mi_sei = 98.37041781427834
+mi_visual_studio = 70.51838230073041
+[spaces.metrics.nargs]
+sum = 2.0
+average = 2.0
+
+[spaces.metrics.nexits]
+sum = 1.0
+average = 1.0
+
+[spaces.metrics.cognitive]
+sum = 0.0
+average = 0.0
+
+[spaces.metrics.cyclomatic]
+sum = 3.0
+average = 1.5
+
+[spaces.metrics.halstead]
+n1 = 9.0
+N1 = 12.0
+n2 = 18.0
+N2 = 35.0
+length = 47.0
+estimated_program_length = 103.58797503894242
+purity_ratio = 2.2039994689136684
+vocabulary = 27.0
+volume = 223.47971260168302
+difficulty = 8.75
+level = 0.11428571428571428
+effort = 1955.4474852647263
+time = 108.6359714035959
+bugs = 0.05212461378177993
+
+[spaces.metrics.loc]
+sloc = 7.0
+ploc = 7.0
+lloc = 1.0
+cloc = 0.0
+blank = 0.0
+
+[spaces.metrics.nom]
+functions = 1.0
+closures = 0.0
+total = 1.0
+
+[spaces.metrics.mi]
+mi_original = 110.65778826470597
+mi_sei = 84.25004995143286
+mi_visual_studio = 64.71215687994501
+
+[[spaces]]
+name = 'update_2dof'
+start_line = 50
+end_line = 63
+kind = 'function'
+spaces = []
+[spaces.metrics.nargs]
+sum = 3.0
+average = 3.0
+
+[spaces.metrics.nexits]
+sum = 2.0
+average = 2.0
+
+[spaces.metrics.cognitive]
+sum = 0.0
+average = 0.0
+
+[spaces.metrics.cyclomatic]
+sum = 1.0
+average = 1.0
+
+[spaces.metrics.halstead]
+n1 = 17.0
+N1 = 60.0
+n2 = 12.0
+N2 = 42.0
+length = 102.0
+estimated_program_length = 112.50641830990963
+purity_ratio = 1.1030041010775455
+vocabulary = 29.0
+volume = 495.51406150301233
+difficulty = 29.75
+level = 0.03361344537815126
+effort = 14741.543329714617
+time = 818.9746294285899
+bugs = 0.20040445921046846
+
+[spaces.metrics.loc]
+sloc = 14.0
+ploc = 12.0
+lloc = 12.0
+cloc = 0.0
+blank = 2.0
+
+[spaces.metrics.nom]
+functions = 1.0
+closures = 0.0
+total = 1.0
+
+[spaces.metrics.mi]
+mi_original = 95.74817345498144
+mi_sei = 62.53638288506969
+mi_visual_studio = 55.993083891802016
+
+[[spaces]]
+name = 'update_2dof_turn_rate_constraint'
+start_line = 66
+end_line = 85
+kind = 'function'
+spaces = []
+[spaces.metrics.nargs]
+sum = 3.0
+average = 3.0
+
+[spaces.metrics.nexits]
+sum = 2.0
+average = 2.0
+
+[spaces.metrics.cognitive]
+sum = 2.0
+average = 2.0
+
+[spaces.metrics.cyclomatic]
+sum = 2.0
+average = 2.0
+
+[spaces.metrics.halstead]
+n1 = 18.0
+N1 = 70.0
+n2 = 16.0
+N2 = 49.0
+length = 119.0
+estimated_program_length = 139.0586500259616
+purity_ratio = 1.1685600842517783
+vocabulary = 34.0
+volume = 605.4080781087904
+difficulty = 27.5625
+level = 0.036281179138321996
+effort = 16686.560152873535
+time = 927.0311196040852
+bugs = 0.2176656797994142
+
+[spaces.metrics.loc]
+sloc = 20.0
+ploc = 18.0
+lloc = 15.0
+cloc = 0.0
+blank = 2.0
+
+[spaces.metrics.nom]
+functions = 1.0
+closures = 0.0
+total = 1.0
+
+[spaces.metrics.mi]
+mi_original = 88.6984429208287
+mi_sei = 52.46759146324854
+mi_visual_studio = 51.87043445662496
+
+[[spaces]]
+name = 'update_3dof'
+start_line = 87
+end_line = 104
+kind = 'function'
+spaces = []
+[spaces.metrics.nargs]
+sum = 4.0
+average = 4.0
+
+[spaces.metrics.nexits]
+sum = 2.0
+average = 2.0
+
+[spaces.metrics.cognitive]
+sum = 0.0
+average = 0.0
+
+[spaces.metrics.cyclomatic]
+sum = 1.0
+average = 1.0
+
+[spaces.metrics.halstead]
+n1 = 17.0
+N1 = 94.0
+n2 = 13.0
+N2 = 67.0
+length = 161.0
+estimated_program_length = 117.59258463708997
+purity_ratio = 0.730388724453975
+vocabulary = 30.0
+volume = 790.0093858929715
+difficulty = 43.80769230769231
+level = 0.022827041264266903
+effort = 34608.488097388254
+time = 1922.6937831882362
+bugs = 0.3539977459689442
+
+[spaces.metrics.loc]
+sloc = 18.0
+ploc = 16.0
+lloc = 19.0
+cloc = 1.0
+blank = 2.0
+
+[spaces.metrics.nom]
+functions = 1.0
+closures = 0.0
+total = 1.0
+
+[spaces.metrics.mi]
+mi_original = 89.25134442549027
+mi_sei = 71.01783426521777
+mi_visual_studio = 52.19376866987736
+
+[[spaces]]
+name = 'main'
+start_line = 106
+end_line = 148
+kind = 'function'
+spaces = []
+[spaces.metrics.nargs]
+sum = 0.0
+average = 0.0
+
+[spaces.metrics.nexits]
+sum = 0.0
+average = 0.0
+
+[spaces.metrics.cognitive]
+sum = 0.0
+average = 0.0
+
+[spaces.metrics.cyclomatic]
+sum = 1.0
+average = 1.0
+
+[spaces.metrics.halstead]
+n1 = 14.0
+N1 = 170.0
+n2 = 47.0
+N2 = 134.0
+length = 304.0
+estimated_program_length = 314.3686449376554
+purity_ratio = 1.0341073846633402
+vocabulary = 61.0
+volume = 1802.9441506191176
+difficulty = 19.95744680851064
+level = 0.050106609808102345
+effort = 35982.16198469643
+time = 1999.0089991498016
+bugs = 0.3633040574465128
+
+[spaces.metrics.loc]
+sloc = 43.0
+ploc = 38.0
+lloc = 40.0
+cloc = 2.0
+blank = 5.0
+
+[spaces.metrics.nom]
+functions = 1.0
+closures = 0.0
+total = 1.0
+
+[spaces.metrics.mi]
+mi_original = 70.85324164180068
+mi_sei = 43.016901895321766
+mi_visual_studio = 41.43464423497116
+[metrics.nargs]
+sum = 25.0
+average = 4.166666666666667
+
+[metrics.nexits]
+sum = 9.0
+average = 1.5
+
+[metrics.cognitive]
+sum = 2.0
+average = 0.3333333333333333
+
+[metrics.cyclomatic]
+sum = 11.0
+average = 1.2222222222222223
+
+[metrics.halstead]
+n1 = 23.0
+N1 = 514.0
+n2 = 78.0
+N2 = 382.0
+length = 896.0
+estimated_program_length = 594.3032980605667
+purity_ratio = 0.6632849308711682
+vocabulary = 101.0
+volume = 5965.757488545608
+difficulty = 56.32051282051282
+level = 0.01775552014568632
+effort = 335994.52111770323
+time = 18666.362284316845
+bugs = 1.6110173181792509
+
+[metrics.loc]
+sloc = 148.0
+ploc = 129.0
+lloc = 102.0
+cloc = 6.0
+blank = 19.0
+
+[metrics.nom]
+functions = 6.0
+closures = 0.0
+total = 6.0
+
+[metrics.mi]
+mi_original = 42.307446325311076
+mi_sei = 1.8004820712411416
+mi_visual_studio = 24.741196681468466
